@@ -1,6 +1,6 @@
 {
   "name": "image-hoard",
-  "description": "image viewer and organizer",
+  "description": "image viewer and tagger",
   "version": "0.0.0",
   "homepage": "http://infocraft.org",
   "private": true,
