@@ -15,7 +15,7 @@ module.exports = (grunt) ->
           atBegin: yes
 
       templates:
-        files: ['app/**/*.jade']
+        files: ['app/**/*.jade', '!app/app.jade']
         tasks: ['jade:default']
         options:
           atBegin: yes
@@ -48,7 +48,7 @@ module.exports = (grunt) ->
     jade:
       default:
         files:
-          'public/<%= pkg.name %>-templates.js': 'app/**/*.jade'
+          'public/<%= pkg.name %>-templates.js': ['app/**/*.jade', '!app/app.jade']
         options:
           client: yes
           compileDebug: no
