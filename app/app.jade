@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title #{pkg.name}
+
+    //- libs
+    script(src='../lib/jquery/jquery.js')
+    script(src='../lib/pouchdb/dist/pouchdb-nightly.js')
+    script(src='../lib/lodash/dist/lodash.compat.js')
+    script(src='../lib/backbone/backbone.js')
+    script(src='../lib/quojs/quo.js')
+    script(src='../lib/handlebars/handlebars.js')
+    script(src='../lib/emblem/dist/emblem.js')
+
+  body
+    #main
+
+    //- app js
+    script(src='#{pkg.name}-templates.js')
+    script(src='#{pkg.name}.js')

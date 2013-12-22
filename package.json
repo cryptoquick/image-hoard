@@ -1,0 +1,32 @@
+{
+  "name": "image-hoard",
+  "description": "image viewer and organizer",
+  "version": "0.0.0",
+  "homepage": "http://infocraft.org",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cryptoquick/image-hoard.git"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-stylus": "~0.10.0",
+    "grunt-emblem": "~0.1.0",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-jade": "~0.8.0",
+    "grunt-node-webkit-builder": "~0.1.11"
+  },
+  "dependencies": {
+    "filewalker": "~0.1.2"
+  },
+  "window": {
+    "toolbar": false,
+    "width": 800,
+    "height": 600
+  }
+}

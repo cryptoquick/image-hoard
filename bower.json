@@ -1,0 +1,12 @@
+{
+  "name": "image-hoard",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "pouchdb": "*",
+    "lodash": "~2.4.1",
+    "backbone": "~1.1.0",
+    "quojs": "~2.3.6",
+    "jade": "~0.35.0"
+  }
+}
