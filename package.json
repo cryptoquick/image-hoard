@@ -19,7 +19,7 @@
     "grunt-emblem": "~0.1.0",
     "grunt-contrib-coffee": "~0.7.0",
     "grunt-contrib-jade": "~0.8.0",
-    "grunt-node-webkit-builder": "~0.1.11"
+    "grunt-node-webkit-builder": "~0.1.14"
   },
   "dependencies": {
     "filewalker": "~0.1.2"

@@ -62,6 +62,12 @@ module.exports = (grunt) ->
           data:
             pkg: pkg
 
+    # nodewebkit:
+    #   options:
+    #     build_dir: 'build'
+    #     mac: yes
+    #     version: '0.8.2'
+
   grunt.loadNpmTasks task for task of pkg.devDependencies when task.indexOf('grunt' is 0) and task isnt 'grunt'
   
   grunt.registerTask 'install', ['jade:install']
