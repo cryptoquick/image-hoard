@@ -21,8 +21,8 @@ module.exports = (grunt) ->
           atBegin: yes
 
       scripts:
-        files: ['app/**/*.coffee']
-        tasks: ['coffee']
+        files: ['app/app.coffee']
+        tasks: ['browserify']
         options:
           atBegin: yes
 
@@ -31,12 +31,12 @@ module.exports = (grunt) ->
         options:
           livereload: yes
 
-    coffee:
+    browserify:
       default:
         files:
-          'public/<%= pkg.name %>.js': 'app/**/*.coffee'
+          'public/<%= pkg.name %>.js': ['app/app.coffee']
         options:
-          join: yes
+          transform: ['coffeeify']
 
     stylus:
       default:
@@ -68,9 +68,9 @@ module.exports = (grunt) ->
     #     mac: yes
     #     version: '0.8.2'
 
-  grunt.loadNpmTasks task for task of pkg.devDependencies when task.indexOf('grunt' is 0) and task isnt 'grunt'
+  grunt.loadNpmTasks task for task of pkg.devDependencies when task.indexOf('grunt') is 0 and task isnt 'grunt'
   
   grunt.registerTask 'install', ['jade:install']
-  grunt.registerTask 'default', ['coffee', 'stylus', 'jade:default']
+  grunt.registerTask 'default', ['browserify', 'stylus', 'jade:default']
 
   return
