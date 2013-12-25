@@ -20,7 +20,9 @@
     "grunt-browserify": "~1.3.0",
     "grunt-contrib-jade": "~0.8.0",
     "grunt-node-webkit-builder": "~0.1.14",
-    "coffeeify": "~0.5.2"
+    "coffeeify": "~0.5.2",
+    "grunt-bower-install-task": "0.0.2",
+    "grunt-contrib-concat": "~0.3.0"
   },
   "dependencies": {
     "filewalker": "~0.1.2"

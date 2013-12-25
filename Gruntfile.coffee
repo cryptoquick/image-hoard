@@ -31,6 +31,18 @@ module.exports = (grunt) ->
         options:
           livereload: yes
 
+    concat:
+      install:
+        src: [
+          'lib/jquery/jquery.js'
+          'lib/handlebars/handlebars.js'
+          'lib/ember/ember.js'
+          'lib/ember-data/ember-data.js'
+          'lib/pouchdb/dist/pouchdb-nightly.js'
+          'lib/quojs/quo.js'
+        ]
+        dest: 'public/<%= pkg.name %>.lib.js'
+
     browserify:
       default:
         files:
@@ -38,29 +50,14 @@ module.exports = (grunt) ->
         options:
           transform: ['coffeeify']
 
+    clean: ['public']
+
     stylus:
       default:
         files:
           'public/<%= pkg.name %>.css': ['styles/*.styl', 'styles/**/*.styl']
         options:
           compress: no
-
-    jade:
-      default:
-        files:
-          'public/<%= pkg.name %>-templates.js': ['app/**/*.jade', '!app/app.jade']
-        options:
-          client: yes
-          compileDebug: no
-          namespace: 'App.Templates'
-          
-      install:
-        files:
-          'public/<%= pkg.name %>.html': 'app/app.jade'
-        options:
-          pretty: yes
-          data:
-            pkg: pkg
 
     # nodewebkit:
     #   options:
@@ -70,7 +67,15 @@ module.exports = (grunt) ->
 
   grunt.loadNpmTasks task for task of pkg.devDependencies when task.indexOf('grunt') is 0 and task isnt 'grunt'
   
-  grunt.registerTask 'install', ['jade:install']
-  grunt.registerTask 'default', ['browserify', 'stylus', 'jade:default']
+  grunt.registerTask 'install', [
+    'bower_install'
+    'concat:install'
+  ]
+  grunt.registerTask 'default', [
+    'clean'
+    'browserify'
+    'stylus'
+    'jade:default'
+  ]
 
   return
