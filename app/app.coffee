@@ -8,7 +8,8 @@ App.Router.map ->
 
 App.IndexRoute = require('./route.coffee')
 
-App.UploadRoute = require('./upload/route.coffee')
+# App.UploadRoute = require('./upload/route.coffee')
+App.UploadController = require('./upload/controller.coffee')
 App.UploadView = require('./upload/view.coffee')
 
 App.GalleryView = require('./gallery/view.coffee')

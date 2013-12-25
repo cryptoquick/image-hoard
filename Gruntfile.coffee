@@ -39,7 +39,7 @@ module.exports = (grunt) ->
           'lib/emblem/dist/emblem.js'
           'lib/ember-data/ember-data.js'
           'lib/pouchdb/dist/pouchdb-nightly.js'
-          'lib/quojs/quo.js'
+          'lib/spark-md5/spark-md5.js'
         ]
         dest: 'public/<%= pkg.name %>.lib.js'
 

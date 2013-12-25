@@ -6,6 +6,7 @@ module.exports = Ember.Route.extend
     @render 'upload',
       outlet: 'upload'
       into: 'index'
+      controller: 'upload'
 
     @render 'gallery',
       outlet: 'gallery'

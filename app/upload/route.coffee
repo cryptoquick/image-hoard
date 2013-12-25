@@ -1,5 +1,5 @@
 module.exports = Ember.Router.extend
 
   actions:
-    addFiles: ->
-      console.log 'files!'
+    addImage: (imageData) ->
+      console.log 'files!', imageData
