@@ -13,22 +13,20 @@ module.exports = (grunt) ->
         tasks: ['stylus']
         options:
           atBegin: yes
+          livereload: yes
 
       templates:
         files: ['app/**/*.emblem']
         tasks: ['emblem']
         options:
           atBegin: yes
+          livereload: yes
 
       scripts:
         files: ['app/**/*.coffee']
         tasks: ['browserify']
         options:
           atBegin: yes
-
-      livereload:
-        files: ['app/**/*', 'styles/**/*']
-        options:
           livereload: yes
 
     concat:
@@ -97,7 +95,7 @@ module.exports = (grunt) ->
     'concat:install'
     'copy'
   ]
-  
+
   grunt.registerTask 'default', [
     'browserify'
     'stylus'
