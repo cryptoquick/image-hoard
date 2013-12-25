@@ -2,11 +2,8 @@
   "name": "image-hoard",
   "private": true,
   "dependencies": {
-    "backbone": "~1.1.0",
-    "jade": "~0.35.0",
-    "lodash": "~2.4.1",
     "pouchdb": "~1.0.0",
     "quojs": "~2.3.6",
-    "zepto-full": "~1.1.2"
+    "ember-data": "1.0.0-beta.4"
   }
 }
