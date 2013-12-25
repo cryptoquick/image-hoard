@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "pouchdb": "~1.0.0",
-    "quojs": "~2.3.6",
-    "ember-data": "1.0.0-beta.4"
+    "ember-data": "1.0.0-beta.4",
+    "emblem": "~0.3.5"
   }
 }

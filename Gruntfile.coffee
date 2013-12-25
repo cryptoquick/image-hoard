@@ -15,13 +15,13 @@ module.exports = (grunt) ->
           atBegin: yes
 
       templates:
-        files: ['app/**/*.jade', '!app/app.jade']
-        tasks: ['jade:default']
+        files: ['app/**/*.emblem']
+        tasks: ['emblem']
         options:
           atBegin: yes
 
       scripts:
-        files: ['app/app.coffee']
+        files: ['app/**/*.coffee']
         tasks: ['browserify']
         options:
           atBegin: yes
@@ -32,11 +32,13 @@ module.exports = (grunt) ->
           livereload: yes
 
     concat:
+
       install:
         src: [
           'lib/jquery/jquery.js'
           'lib/handlebars/handlebars.js'
           'lib/ember/ember.js'
+          'lib/emblem/dist/emblem.js'
           'lib/ember-data/ember-data.js'
           'lib/pouchdb/dist/pouchdb-nightly.js'
           'lib/quojs/quo.js'
@@ -44,22 +46,45 @@ module.exports = (grunt) ->
         dest: 'public/<%= pkg.name %>.lib.js'
 
     browserify:
+
       default:
         files:
-          'public/<%= pkg.name %>.js': ['app/app.coffee']
+          'public/<%= pkg.name %>.app.js': ['app/app.coffee']
         options:
           transform: ['coffeeify']
 
     clean: ['public']
 
     stylus:
+
       default:
         files:
           'public/<%= pkg.name %>.css': ['styles/*.styl', 'styles/**/*.styl']
         options:
           compress: no
 
+    emblem:
+
+      default:
+        files:
+          'public/<%= pkg.name %>.tpl.js': 'app/**/*.emblem'
+        options:
+          root: 'app/'
+          dependencies:
+            jquery: 'lib/jquery/jquery.js'
+            ember: 'lib/ember/ember.js'
+            emblem: 'lib/emblem/dist/emblem.js'
+            handlebars: 'lib/handlebars/handlebars.js'
+
+    copy:
+      default:
+        files: [
+          src: 'index.html'
+          dest: 'public/index.html'
+        ]
+
     # nodewebkit:
+    #
     #   options:
     #     build_dir: 'build'
     #     mac: yes
@@ -70,12 +95,13 @@ module.exports = (grunt) ->
   grunt.registerTask 'install', [
     'bower_install'
     'concat:install'
+    'copy'
   ]
+  
   grunt.registerTask 'default', [
-    'clean'
     'browserify'
     'stylus'
-    'jade:default'
+    'emblem'
   ]
 
   return
