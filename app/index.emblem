@@ -1,1 +1,4 @@
-= link-to 'Upload' 'upload'
+p bleap
+
+= outlet upload
+= outlet gallery
