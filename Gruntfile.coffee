@@ -52,7 +52,7 @@ module.exports = (grunt) ->
         options:
           client: yes
           compileDebug: no
-          namespace: 'app.templates'
+          namespace: 'App.Templates'
           
       install:
         files:
