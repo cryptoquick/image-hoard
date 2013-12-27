@@ -7,15 +7,15 @@ App.Router.map ->
     path: '/gallery'
 
 # Models
-App.Image = require('./models/image.coffee')
+App.Image = require './models/image.coffee'
 
 # Index
-App.IndexRoute = require('./route.coffee')
+App.IndexRoute = require './route.coffee'
 
 # Upload
 # App.UploadRoute = require('./upload/route.coffee')
-App.UploadController = require('./upload/controller.coffee')
-App.UploadView = require('./upload/view.coffee')
+App.UploadController = require './upload/controller.coffee' 
+App.UploadView = require './upload/view.coffee'
 
 # Gallery
-App.GalleryView = require('./gallery/view.coffee')
+App.GalleryView = require './gallery/view.coffee'

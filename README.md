@@ -10,3 +10,13 @@ It will sync your images with cloud accounts (Dropbox, Google Drive, Amazon S3).
 Will run on Windows, Mac OS X, and Linux (32-bit & 64-bit).
 
 Currently under heavy development. Watch this space.
+
+# Build
+
+Requires Node.js and Grunt
+
+```shell
+npm install
+grunt install
+grunt
+```
