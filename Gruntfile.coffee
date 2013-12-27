@@ -50,6 +50,7 @@ module.exports = (grunt) ->
           'public/<%= pkg.name %>.app.js': ['app/app.coffee']
         options:
           transform: ['coffeeify']
+          debug: grunt.cli.tasks[0] isnt 'dist'
 
     clean: ['public']
 

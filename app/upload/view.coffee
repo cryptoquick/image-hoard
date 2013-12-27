@@ -17,12 +17,29 @@ module.exports = Ember.View.extend
 
     that = this
 
-    for file in files
-      if file.type.match 'image.*'
-        do (file) ->
-          reader = new FileReader()
-          reader.onload = (data) ->
-            that.get('controller').send('addImage', file, data);
-          reader.readAsDataURL file
+    addImage = ->
+      return new Ember.RSVP.Promise (resolve, reject) ->
+        reader = new FileReader()
+        reader.onload = (data) ->
+          result = data.target.result
+
+          image = that.get('controller').store.push 'image',
+            id: SparkMD5.hash result
+            name: file.name
+            'date-modified': new Date file.lastModifiedDate
+            'date-added': new Date()
+            size: file.size
+            type: file.type.split('image/')[1]
+
+          console.log 'loaded'
+          resolve image
+        reader.onerror = (evt) ->
+          reject evt
+        reader.readAsDataURL file
+
+    promises = (addImage file for file in files when file.type.match 'image.*')
+
+    Ember.RSVP.all(promises).then (results) ->
+      console.log 'finished! results', results
 
     console.log files
