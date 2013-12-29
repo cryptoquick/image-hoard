@@ -13,7 +13,6 @@ App.Image = require './models/image.coffee'
 App.IndexRoute = require './route.coffee'
 
 # Upload
-# App.UploadRoute = require('./upload/route.coffee')
 App.UploadController = require './upload/controller.coffee' 
 App.UploadView = require './upload/view.coffee'
 
