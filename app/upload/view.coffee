@@ -7,14 +7,12 @@ module.exports = Ember.View.extend
     evt.preventDefault()
 
     evt.dataTransfer.effect = 'link'
-    # console.log evt
 
   drop: (evt) ->
     evt.stopPropagation()
     evt.preventDefault()
 
     files = evt.dataTransfer.files
-
     that = this
 
     addImage = ->
@@ -30,6 +28,9 @@ module.exports = Ember.View.extend
             'date-added': new Date()
             size: file.size
             type: file.type.split('image/')[1]
+            url: result
+
+          that.get('controller').send 'update'
 
           console.log 'loaded'
           resolve image

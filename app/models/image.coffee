@@ -1,9 +1,8 @@
-attr = DS.attr
-
 module.exports = DS.Model.extend
 
-  name: attr 'string'
-  'date-modified': 'date'
-  'date-added': 'date'
-  size: 'number'
-  type: 'string'
+  name: DS.attr 'string'
+  'date-modified': DS.attr 'date'
+  'date-added': DS.attr 'date'
+  size: DS.attr 'number'
+  type: DS.attr 'string'
+  url: DS.attr 'string'

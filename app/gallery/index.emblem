@@ -1,1 +1,7 @@
 h3 gallery
+
+each item in model
+  a.th.radius
+    img src='item.url'
+
+= outlet

@@ -1,7 +1,5 @@
 p welcome!
 
-a.th.radius
-  img src='http://foundation.zurb.com/docs/assets/img/examples/space-th-sm.jpg'
+link-to 'gallery.upload' | Upload Images
 
-= outlet upload
-= outlet gallery
+= outlet
