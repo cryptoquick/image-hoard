@@ -2,7 +2,6 @@
   "name": "image-hoard",
   "private": true,
   "dependencies": {
-    "pouchdb": "~1.0.0",
     "ember-data": "1.0.0-beta.4",
     "emblem": "~0.3.6",
     "spark-md5": "~0.0.5",

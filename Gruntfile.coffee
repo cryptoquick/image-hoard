@@ -40,7 +40,6 @@ module.exports = (grunt) ->
           'lib/emblem/dist/emblem.js'
           'lib/ember-data/ember-data.js'
           # misc
-          'lib/pouchdb/dist/pouchdb-nightly.js'
           'lib/spark-md5/spark-md5.js'
           # foundation vendor libs
           'lib/foundation/js/vendor/custom.modernizr.js'

@@ -1,4 +1,4 @@
-App = Ember.Application.create()
+window.App = App = Ember.Application.create()
 
 App.Router.map ->
   @resource 'gallery',
@@ -8,6 +8,12 @@ App.Router.map ->
 
 # Models
 App.Image = require './models/image.coffee'
+
+# Adapters
+App.ImageAdapter = require './adapters/image.coffee'
+
+# Serializers
+App.ImageSerializer = require './serializers/image.coffee'
 
 # Index
 App.IndexRoute = require './route.coffee'

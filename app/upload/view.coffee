@@ -18,6 +18,7 @@ module.exports = Ember.View.extend
     addImage = ->
       return new Ember.RSVP.Promise (resolve, reject) ->
         reader = new FileReader()
+        
         reader.onload = (data) ->
           result = data.target.result
 
@@ -30,17 +31,18 @@ module.exports = Ember.View.extend
             type: file.type.split('image/')[1]
             url: result
 
-          that.get('controller').send 'update'
-
           console.log 'loaded'
           resolve image
+
         reader.onerror = (evt) ->
           reject evt
+
         reader.readAsDataURL file
 
     promises = (addImage file for file in files when file.type.match 'image.*')
 
     Ember.RSVP.all(promises).then (results) ->
+      that.get('controller').send 'update'
       console.log 'finished! results', results
 
     console.log files
